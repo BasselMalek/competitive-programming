@@ -3,19 +3,24 @@ using namespace std;
 
 int main()
 {
-    int result, pric, dem;
-    bool carped = true;
+    int result, pric, dem, i = 1;
+
     cin >> pric >> dem;
-    int i = 1;
-    while (carped)
+
+    while (true)
     {
-        int tot = pric * i;
-        if (!(tot % 10) || !(tot % (10 + dem)))
+        int test = (i * pric);
+        int testd = (i * pric) - dem;
+        if (!(test % 10) || !(testd % 10))
         {
             result = i;
-            carped = false;
+            break;
         }
-        i++;
+        else
+        {
+            i++;
+        }
     }
+
     cout << result;
 }
